@@ -7,18 +7,18 @@ session = Session(URL, LOGIN, PASSWORD)
 session.login()
 
 #create tenant and vrf
-tenant_name = "INITIALS_Example_Tenant"
+tenant_name = "INITIALS_ExampleAIV_Tenant"
 tenant = Tenant(tenant_name)
-vrf = Context("Example_VRF", tenant)
+vrf = Context("ExampleAIV_VRF", tenant)
 
 # create bridge domain with vrf relationship
-bridge_domain = BridgeDomain("Example_BD", tenant)
+bridge_domain = BridgeDomain("ExampleAIV_BD", tenant)
 bridge_domain.add_context(vrf)
 
 # create public subnet and assign gateway
-subnet = Subnet("Example_Subnet", bridge_domain)
+subnet = Subnet("ExampleAIV_Subnet", bridge_domain)
 subnet.set_scope("public")
-subnet.set_addr("10.10.10.1/24")
+subnet.set_addr("10.23.23.1/24")
 
 # create http filter and filter entry
 filter_http = Filter("http", tenant)
@@ -39,7 +39,7 @@ contract_subject_sql = ContractSubject("sql", contract_database)
 contract_subject_sql.add_filter(filter_sql)
 
 # create application profile
-app_profile = AppProfile("Example_App", tenant)
+app_profile = AppProfile("ExampleAIV_App", tenant)
 
 # create web epg and associate bridge domain and contracts
 epg_web = EPG("Web", app_profile)

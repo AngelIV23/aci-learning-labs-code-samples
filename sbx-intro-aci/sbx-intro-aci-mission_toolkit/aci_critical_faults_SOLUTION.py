@@ -10,6 +10,7 @@ from acitoolkit.acitoolkit import Session
 from acitoolkit import Faults
 from credentials import URL, LOGIN, PASSWORD
 import requests, json
+import sys
 
 requests.packages.urllib3.disable_warnings() # Disable warning message
 

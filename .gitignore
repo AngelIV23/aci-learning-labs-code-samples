@@ -5,3 +5,11 @@ acitoolkit/
 notes.txt
 webarya/
 __pycache__
+bin/
+include/
+lib/
+lib64/
+share/
+pyvenv*
+.gitignore
+lib64
